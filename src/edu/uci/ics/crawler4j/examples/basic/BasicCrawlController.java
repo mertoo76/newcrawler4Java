@@ -1,5 +1,7 @@
 package edu.uci.ics.crawler4j.examples.basic;
 
+import java.util.Scanner;
+
 import edu.uci.ics.crawler4j.crawler.CrawlConfig;
 import edu.uci.ics.crawler4j.crawler.CrawlController;
 import edu.uci.ics.crawler4j.fetcher.PageFetcher;
@@ -17,7 +19,10 @@ public class BasicCrawlController {
 //		}
 
 		
- 
+		System.out.println("Please choose crawler setting");
+		 		System.out.println("1 for DFS, 2 for BFS");
+		 		Scanner scanner = new Scanner(System.in);
+		 		int choose = scanner.nextInt(); 
 		
 		args = new String[2];
 		args[0] = "./data";
@@ -57,6 +62,8 @@ public class BasicCrawlController {
 		 * You can set the maximum number of pages to crawl. The default value
 		 * is -1 for unlimited number of pages
 		 */
+		
+		
 		config.setMaxPagesToFetch(100);
 
 		/*
@@ -76,6 +83,8 @@ public class BasicCrawlController {
 		RobotstxtServer robotstxtServer = new RobotstxtServer(robotstxtConfig, pageFetcher);
 		CrawlController controller = new CrawlController(config, pageFetcher, robotstxtServer);
 
+		
+		controller.setChoice(choose);
 	    /*
 	     * For each crawl, you need to add some seed urls. These are the first
 	     * URLs that are fetched and then the crawler starts following links

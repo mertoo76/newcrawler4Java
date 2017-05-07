@@ -25,7 +25,7 @@ public class CrawlController extends Configurable {
 
 	public boolean someoneIsWorking; //MERT
 	public boolean change=false; //MERT
-	
+	public int choice;
 	private static final Logger logger = Logger.getLogger(CrawlController.class.getName());
 
 	/**
@@ -334,6 +334,12 @@ public class CrawlController extends Configurable {
 	public void setRobotstxtServer(RobotstxtServer robotstxtServer) {
 		this.robotstxtServer = robotstxtServer;
 	}
+	public void setChoice(int choice){
+		 		this.choice = choice;
+		 	}
+		 	public int getChoice() {
+		 		return choice;
+		 	}
 
 	public Frontier getFrontier() {
 		return frontier;

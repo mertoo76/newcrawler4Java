@@ -42,7 +42,7 @@ import java.util.List;
 public class WebCrawler implements Runnable {
 	
 	protected static final Logger logger = Logger.getLogger(WebCrawler.class.getName());
-int basla =0;
+
 
 List<Page> biospagenot = new ArrayList<Page>(50); //MERT
 
@@ -220,7 +220,7 @@ List<Page> biospagenot = new ArrayList<Page>(50); //MERT
 			frontier.getNextURLs(50, assignedURLs);
 			isWaitingForNewURLs = false;
 			if (assignedURLs.size() == 0) { 
-				System.out.println("if ici");
+				
 				
 				
 				if (frontier.isFinished()) {
@@ -238,7 +238,10 @@ List<Page> biospagenot = new ArrayList<Page>(50); //MERT
 					
 					for (WebURL curURL : assignedURLs) {
 						if (curURL != null) {
-							dfsPage(curURL);
+							if(myController.getChoice()==1){
+								 						dfsPage(curURL);}
+								 						else{
+								 						processPage(curURL);}
 							//processPage(curURL);
 							frontier.setProcessed(curURL);
 						}
