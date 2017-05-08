@@ -44,7 +44,7 @@ public class WebCrawler implements Runnable {
 	protected static final Logger logger = Logger.getLogger(WebCrawler.class.getName());
 
 
-List<Page> biospagenot = new ArrayList<Page>(50); //MERT
+List<Page> biospagenot = new ArrayList<Page>(50); //BFS Belirtilen keyword'ü içermeyen page'lerin toplandýðý liste
 
 	/**
 	 * The id associated to the crawler thread running this instance
@@ -238,10 +238,10 @@ List<Page> biospagenot = new ArrayList<Page>(50); //MERT
 					
 					for (WebURL curURL : assignedURLs) {
 						if (curURL != null) {
-							if(myController.getChoice()==1){
-								 						dfsPage(curURL);}
-								 						else{
-								 						processPage(curURL);}
+							if(myController.getChoice()==1){// Genel
+								 						dfsPage(curURL);} //Genel
+								 						else{//Genel
+								 						bfsPage(curURL);} //Genel
 							//processPage(curURL);
 							frontier.setProcessed(curURL);
 						}
@@ -287,7 +287,7 @@ List<Page> biospagenot = new ArrayList<Page>(50); //MERT
 	public void visit(Page page) {
 	}
 	
-	private int processPage(WebURL curURL) {
+	private int bfsPage(WebURL curURL) {
 		if (curURL == null) {
 			return -1;
 		}
@@ -381,10 +381,18 @@ List<Page> biospagenot = new ArrayList<Page>(50); //MERT
 				
 				
 				//	System.out.println("Visite girdi orji:------------------------ " );
-					if(!page.getWebURL().toString().contains("bios")){ //MERT
-						biospagenot.add(page); //MERT
-					} //MERT
-					else //MERT
+				
+				/*Ýf komutu ile belirttilen keyword içerilmiyorsa 
+				 * yukarýda global olarak tanýmladýðýmýz biospagenot listemize ekliyoruz. 
+				 * Belirtilen Keyword içeriliyor ise page visit ediliyor. En sonunda sistem
+				 * gidilecek page bulamayýnca CrawlController.java dosyasý içinde tanýmladýðýmýz
+				 * biospagenot listesindeki page'leri visit ediyoruz.
+				 * 
+				 */
+					if(!page.getWebURL().toString().contains("bios")){ //BFS 
+						biospagenot.add(page); //BFS
+					} //BFS
+					else //BFS
 				visit(page);
 				
 			}

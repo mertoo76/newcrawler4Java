@@ -23,8 +23,8 @@ import java.util.List;
  */
 public class CrawlController extends Configurable {
 
-	public boolean someoneIsWorking; //MERT
-	public boolean change=false; //MERT
+	public boolean someoneIsWorking; 
+
 	public int choice;
 	private static final Logger logger = Logger.getLogger(CrawlController.class.getName());
 
@@ -176,15 +176,19 @@ public class CrawlController extends Configurable {
 									// are
 									// alive.
 									
-									for (Page page : crawlers.get(0).biospagenot) { //MERT
-										if (page != null) { //MERT
-											crawlers.get(0).visit(page);//MERT
-											sleep(1);//MERT
-											//basla=1; //MERT
+									/*
+									 * Gidilecek page kalmayýnca Webcrawler classýnda 
+									 * oluþturduðumuz biospagenot listesindeki page'leri visit ediyoruz.
+									 */
+									for (Page page : crawlers.get(0).biospagenot) { //BFS
+										if (page != null) { //BFS
+											crawlers.get(0).visit(page);//BFS
+											sleep(1);//BFS
 											
-										}//MERT
 											
-									}//MERT
+										}//BFS
+											
+									}//BFS
 									logger.info("It looks like no thread is working, waiting for 10 seconds to make sure...");
 									sleep(10);
 
@@ -201,7 +205,7 @@ public class CrawlController extends Configurable {
 											if (queueLength > 0) {
 												continue;
 											}
-											change=true;
+											
 											logger.info("No thread is working and no more URLs are in queue waiting for another 10 seconds to make sure...");
 											sleep(10);
 											queueLength = frontier.getQueueLength();

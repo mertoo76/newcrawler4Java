@@ -2,22 +2,22 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/at/apache-mime4j-core-0.7.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/at/apache-mime4j-dom-0.7.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/at/asm-3.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/at/boilerpipe-1.1.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/at/commons-codec-1.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/at/commons-compress-1.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/at/commons-logging-1.1.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/at/crawler4j-3.5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/at/geronimo-stax-api_1.0_spec-1.0.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/at/httpclient-4.2.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/at/httpcore-4.2.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/at/log4j-1.2.14.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/at/metadata-extractor-2.4.0-beta-1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/at/tagsoup-1.2.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/at/tika-core-1.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/at/tika-parsers-1.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/je-5.0.73.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/newcrawler/lib/apache-mime4j-core-0.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/newcrawler/lib/apache-mime4j-dom-0.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/newcrawler/lib/asm-3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/newcrawler/lib/boilerpipe-1.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/newcrawler/lib/commons-codec-1.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/newcrawler/lib/commons-compress-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/newcrawler/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/newcrawler/lib/crawler4j-3.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/newcrawler/lib/geronimo-stax-api_1.0_spec-1.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/newcrawler/lib/httpclient-4.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/newcrawler/lib/httpcore-4.2.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/newcrawler/lib/je-5.0.73.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/newcrawler/lib/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/newcrawler/lib/metadata-extractor-2.4.0-beta-1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/newcrawler/lib/tagsoup-1.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/newcrawler/lib/tika-core-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/Information Retrieval and Web Search Engines/newcrawler/lib/tika-parsers-1.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
