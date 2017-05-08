@@ -24,7 +24,9 @@ import java.util.List;
 public class CrawlController extends Configurable {
 
 	public boolean someoneIsWorking; 
-
+	/*
+	 * for menu choice
+	 */
 	public int choice;
 	private static final Logger logger = Logger.getLogger(CrawlController.class.getName());
 

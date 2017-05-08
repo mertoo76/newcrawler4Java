@@ -162,7 +162,12 @@ List<Page> biospagenot = new ArrayList<Page>(50); //BFS Belirtilen keyword'ü içe
 	public Object getMyLocalData() {
 		return null;
 	}
-	
+	/*
+	 * In this  function, everthing is based on processpage function which is basically indexing
+	 * Url, and making something to use as recursive calling Depth first search, we changed WebURL class
+	 * and added status int. for controlling. After that, the main function that crawls data is , 
+	 * visit(page) like in original one. 
+	 */
 	private int dfsPage(WebURL curURL){
 		if (curURL == null) {
 			return -1;
@@ -171,8 +176,11 @@ List<Page> biospagenot = new ArrayList<Page>(50); //BFS Belirtilen keyword'ü içe
 			System.out.println("We hit the limit of max depth");
 			return -1;
 		}
-		else{
+		else{//we marked url status to 1;
 			curURL.setStatus(1);
+			/*
+			 * Below code is mainly based on original processPage on Breadth first search 
+			 */
 			PageFetchResult fetchResult = null;
 			fetchResult = pageFetcher.fetchHeader(curURL);
 			Page page = new Page(curURL);
@@ -181,10 +189,10 @@ List<Page> biospagenot = new ArrayList<Page>(50); //BFS Belirtilen keyword'ü içe
 				ParseData parseData = page.getParseData();
 				if (parseData instanceof HtmlParseData) {
 					HtmlParseData htmlParseData = (HtmlParseData) parseData;
-					List<WebURL> komsular = new ArrayList<WebURL>();
+					
 					int maxCrawlDepth = myController.getConfig().getMaxDepthOfCrawling();
-					for (WebURL webURL : htmlParseData.getOutgoingUrls()) {
-						webURL.setParentDocid(docid);
+					for (WebURL webURL : htmlParseData.getOutgoingUrls()) {//for every outgoing url, means childs
+						webURL.setParentDocid(docid);//set their parent it
 						int newdocid = docIdServer.getDocId(webURL.getURL());
 						if (newdocid > 0) {
 							webURL.setDepth((short) -1);
@@ -195,8 +203,8 @@ List<Page> biospagenot = new ArrayList<Page>(50); //BFS Belirtilen keyword'ü içe
 							if (maxCrawlDepth == -1 || curURL.getDepth() < maxCrawlDepth) {
 								if (shouldVisit(webURL) && robotstxtServer.allows(webURL)) {
 									webURL.setDocid(docIdServer.getNewDocID(webURL.getURL()));
-									if(webURL.getStatus() == 0){
-										dfsPage(webURL);
+									if(webURL.getStatus() == 0){//if this url is not visited
+										dfsPage(webURL);//recursive call url
 									}
 								}
 							}
@@ -204,7 +212,7 @@ List<Page> biospagenot = new ArrayList<Page>(50); //BFS Belirtilen keyword'ü içe
 					}
 					//frontier.scheduleAll(toSchedule);
 					visit(page);
-					curURL.setStatus(2);
+					curURL.setStatus(2);//after all works done, set url to visited.
 				}
 				
 			}
@@ -238,6 +246,9 @@ List<Page> biospagenot = new ArrayList<Page>(50); //BFS Belirtilen keyword'ü içe
 					
 					for (WebURL curURL : assignedURLs) {
 						if (curURL != null) {
+							/*
+							 * If curUrl is not empty, then get our menu choice and do work according to that.
+							 */
 							if(myController.getChoice()==1){// Genel
 								 						dfsPage(curURL);} //Genel
 								 						else{//Genel

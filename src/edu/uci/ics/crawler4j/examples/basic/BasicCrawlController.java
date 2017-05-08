@@ -18,7 +18,9 @@ public class BasicCrawlController {
 //			return;
 //		}
 
-		
+		/*
+		 * We defined an integer for choosing algorithm inside CrawlController.
+		 */
 		System.out.println("Please choose crawler setting");
 		 		System.out.println("1 for DFS, 2 for BFS");
 		 		Scanner scanner = new Scanner(System.in);
